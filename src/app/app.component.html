@@ -1,0 +1,39 @@
+<style>
+  .collapse {
+    display: flex;
+    align-items: end;
+  }
+</style>
+
+<!-- Toolbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-2">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="javascript:void(0)">CRUD</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <div class="me-auto">
+      </div>
+      <div class="d-flex">
+        <ul class="navbar-nav list-inline">
+          <li class="nav-item list-inline-item">
+            <a routerLink="" class="text-white text-decoration-none me-4">Home</a>
+          </li>
+          <li class="nav-item list-inline-item">
+            <a routerLink="employee" class="text-white text-decoration-none me-4">Employee</a>
+          </li>
+          <li class="nav-item list-inline-item">
+            <a class="text-white text-decoration-none me-4">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="text-white text-decoration-none me-4">User</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<app-passvalidation></app-passvalidation>
+<router-outlet></router-outlet>

@@ -1,0 +1,9 @@
+<!-- in the component template -->
+<div>
+    <label for="password">Password</label>
+    <input type="{{ hide ? 'password' : 'text' }}" formControlName="password">
+    <button type="button" (click)="togglePasswordVisibility()">
+      <i [ngClass]="hide? 'fa fa-eye' : 'fa fa-eye-slash' "></i>
+    </button>
+  </div>
+  

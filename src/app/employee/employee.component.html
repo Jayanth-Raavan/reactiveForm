@@ -1,0 +1,26 @@
+<h1 class="text-success text-center">Employee Details</h1>
+<app-modal></app-modal>
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>PHONE</th>
+                <th>DESIGNATION</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of employees">
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.phone}}</td>
+                <td>{{emp.designation}}</td>
+                <td><a  class="btn btn-info" (click)="EditEmployee(emp.id)">Edit</a> | <a class="btn btn-danger" (click)="deleteEmployee(emp.id)">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

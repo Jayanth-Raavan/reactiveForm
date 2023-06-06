@@ -1,0 +1,60 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title text-center text-primary" id="modal-basic-title">Employee Details</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="employeeForm" (ngSubmit)="saveEmployee()">
+            <div class="mb-3">
+                <label for="id">Id</label>
+                <div class="input-group">
+                    <input class="form-control" name="id" formControlName="id" />
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="name">Name</label>
+                <div class="input-group">
+                    <input class="form-control" name="name" formControlName="name" />
+                </div>
+                <span *ngIf="name && name.touched && name.invalid" ngClass="errorClass">Enter Valid Name</span>
+            </div>
+            <div class="mb-3">
+                <label for="email">Email</label>
+                <div class="input-group">
+                    <input class="form-control" name="email" formControlName="email" />
+                </div>
+                <span *ngIf="email && email.touched && email.invalid" ngClass="errorClass">Enter Valid Email</span>
+            </div>
+            <div class="mb-3">
+                <label for="phone">Phone</label>
+                <div class="input-group">
+                    <input class="form-control" name="phone" formControlName="phone" />
+                </div>
+                <span *ngIf="phone && phone.touched && phone.invalid" ngClass="errorClass">Phone Number Required</span>
+            </div>
+            <div class="mb-3">
+                <label for="designation">Designation</label>
+                <div class="input-group">
+                    <select name="designation" id="designation" class="form-control" formControlName="designation">
+                        <option value="" selected>select designation</option>
+                        <option *ngFor="let d of des" value="des.code">{{d.name}}</option>
+                    </select>
+                </div>
+                <span *ngIf="designation && designation.touched && designation.invalid" ngClass="errorClass">Designation Required</span>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary form-control" [disabled]="buttonDisabled" [style.background-color]="buttonColor">{{buttonText}}</button>
+            </div>
+            <!-- <div class="mt-3">
+                <span [ngClass]="messageColor" >{{message}}</span>
+                <span [ngClass]="messageColor">{{message}}</span>
+            </div> -->
+        </form>
+    </div>
+    
+</ng-template>
+
+<button class="btn btn-lg btn-primary" (click)="open()">Add Employee</button>
+
+
+<pre>{{ closeResult }}</pre>
